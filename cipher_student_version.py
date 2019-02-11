@@ -21,12 +21,12 @@
 # 3. 'nwcz akwzm ivl amdmv gmiza iow'
 
 # ****************Answers****************
-# 1.Message:
-#   Shift Amt:
-# 2.Message:
-#   Shift Amt:
-# 3.Message:
-#   Shift Amt:
+# 1.Message: to be, or not to be: that is the question:
+#   Shift Amt: 1
+# 2.Message: es2 is my favorite class
+#   Shift Amt: 12
+# 3.Message: four score and seven years ago
+#   Shift Amt: 18
 
 # message: string to be encrypt
 # shift: integer number of letters to shift by.
