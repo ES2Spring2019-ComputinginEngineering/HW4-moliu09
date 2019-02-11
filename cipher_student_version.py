@@ -4,8 +4,8 @@
 # FILL THESE COMMENTS IN
 #*****************************************
 # YOUR NAME: Mo Liu
-# NUMBER OF HOURS TO COMPLETE:
-# YOUR COLLABORATION STATEMENT(s):
+# NUMBER OF HOURS TO COMPLETE: ~2
+# YOUR COLLABORATION STATEMENT(s): I worked alone on this assignment.
 #
 #
 #*****************************************
@@ -34,8 +34,10 @@
 #   However, you can write your function to work with negatives and numbers greater than 25 if you wish
 
 import math
+import time
 message = input("What is your message?\n")
 shift = int(input("How much do you want to shift the message?\n"))
+print(message is int) #why???
 
 #encrypting function
 def encrypt(message, shift):

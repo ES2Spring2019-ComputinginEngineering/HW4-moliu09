@@ -6,7 +6,7 @@
 #*****************************************
 # YOUR NAME: Mo Liu
 # NUMBER OF HOURS TO COMPLETE:
-# YOUR COLLABORATION STATEMENT(s):
+# YOUR COLLABORATION STATEMENT(s): I worked on this assignment with Nicolas Ragusa and Alyssa Attonito.
 #
 #
 #*****************************************
@@ -28,12 +28,20 @@
 # the button is held down for.
 
 import microbit
-
-time0 = microbit.running_time() #get the current running time
-
-microbit.sleep(1500) #wait 1.5 seconds
-
-time1 = microbit.running_time() #get the current running time
-
+time0 = microbit.running_time()
+time1 = microbit.running_time()
 elapsed_time = time1 - time0 #calculates difference in milliseconds
-print(elapsed_time, " milliseconds")
+
+while True:
+    elapsed_time = time1 - time0
+    while microbit.button_a.is_pressed() == True:
+        microbit.display.show(microbit.Image.CLOCK2)
+        time0 = microbit.running_time()
+        microbit.sleep(50)
+        time1 = microbit.running_time()
+        elapsed_time = elapsed_time + (time1 - time0)
+    timeinseconds = elapsed_time/1000
+    microbit.display.scroll(round(timeinseconds, 2))
+    print(elapsed_time, " milliseconds")
+    microbit.display.show(microbit.Image.HEART)
+    elapsed_time = 0
