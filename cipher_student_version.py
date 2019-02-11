@@ -51,3 +51,8 @@ while True:
             string = string + chr(t)
         return string
     print(encrypt(message, shift))
+
+s = 1
+while s < 26:
+    m = "sn ad, nq mns sn ad: sgzs hr sgd ptdrshnm:"
+    print(encrypt(m, s))
