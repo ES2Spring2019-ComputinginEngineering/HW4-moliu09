@@ -34,25 +34,30 @@
 #   However, you can write your function to work with negatives and numbers greater than 25 if you wish
 
 import math
-while True:
-    message = input("What is your message?\n")
-    shift = int(input("How much do you want to shift the message?\n"))
+message = input("What is your message?\n")
+shift = int(input("How much do you want to shift the message?\n"))
 
-    def encrypt(message, shift):
-        string = ""
-        for i in message:
-            t = ord(i)
-            if t >= 65 and t <= 90:
-                t = t + 32
-            if t >= 97 and t <= 122:
-                t = t + shift
-                if t > 122:
-                    t = 96 + (t - 122)
-            string = string + chr(t)
-        return string
-    print(encrypt(message, shift))
+#encrypting function
+def encrypt(message, shift):
+    string = ""
+    for i in message:
+        t = ord(i)
+        if t >= 65 and t <= 90:
+            t = t + 32
+        if t >= 97 and t <= 122:
+            t = t + shift
+            if t > 122:
+                t = 96 + (t - 122)
+        string = string + chr(t)
+    return string
+print(encrypt(message, shift))
 
-s = 1
-while s < 26:
-    m = "sn ad, nq mns sn ad: sgzs hr sgd ptdrshnm:"
-    print(encrypt(m, s))
+#automated decrypting function
+prompt = input("Would you like to decrypt a message?\n")
+if prompt == "yes":
+    m = input("What would you like to decrypt?\n")
+    s = 1
+    while s < 26:
+        number = str(s)
+        print("amount shifted = " + number + ": " + encrypt(m, s))
+        s = s + 1
