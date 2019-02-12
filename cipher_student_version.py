@@ -37,11 +37,12 @@ import math
 import time
 message = input("What is your message?\n")
 shift = int(input("How much do you want to shift the message?\n"))
-print(message is int) #why???
 
 #encrypting function
 def encrypt(message, shift):
     string = ""
+    if not isinstance(shift, int):
+        return "Error"
     for i in message:
         t = ord(i)
         if t >= 65 and t <= 90:

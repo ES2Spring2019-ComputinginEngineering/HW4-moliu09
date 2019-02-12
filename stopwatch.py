@@ -28,20 +28,16 @@
 # the button is held down for.
 
 import microbit
-time0 = microbit.running_time()
-time1 = microbit.running_time()
-elapsed_time = time1 - time0 #calculates difference in milliseconds
-
 while True:
-    elapsed_time = time1 - time0
-    while microbit.button_a.is_pressed() == True:
-        microbit.display.show(microbit.Image.CLOCK2)
-        time0 = microbit.running_time()
-        microbit.sleep(50)
-        time1 = microbit.running_time()
-        elapsed_time = elapsed_time + (time1 - time0)
-    timeinseconds = elapsed_time/1000
-    microbit.display.scroll(round(timeinseconds, 2))
-    print(elapsed_time, " milliseconds")
-    microbit.display.show(microbit.Image.HEART)
-    elapsed_time = 0
+    microbit.display.scroll("READY!")
+    time0 = microbit.running_time()
+    time1 = microbit.running_time()
+    if microbit.button_a.is_pressed() == True:
+        while microbit.button_a.is_pressed() == True:
+            microbit.display.show(microbit.Image.CLOCK12)
+            time1 = microbit.running_time()
+            elapsed_time = time1 - time0
+        timeinseconds = elapsed_time/1000
+        microbit.display.scroll(round(timeinseconds, 3))
+        microbit.sleep(1000)
+        elapsed_time = 0
