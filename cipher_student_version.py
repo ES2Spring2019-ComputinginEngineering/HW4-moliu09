@@ -36,13 +36,15 @@
 import math
 import time
 message = input("What is your message?\n")
-shift = int(input("How much do you want to shift the message?\n"))
+shift = input("How much do you want to shift the message?\n")
 
 #encrypting function
 def encrypt(message, shift):
     string = ""
-    for i in message:
-        t = ord(i)
+    if str.isdigit(shift) == True:
+        shift = int(shift)
+        for i in message:
+            t = ord(i)
         if t >= 65 and t <= 90:
             t = t + 32
         if t >= 97 and t <= 122:
@@ -50,10 +52,13 @@ def encrypt(message, shift):
             if t > 122:
                 t = 96 + (t - 122)
         string = string + chr(t)
+    else:
+        print("Error! Please type in an integer.")
     return string
 print(encrypt(message, shift))
 
 #automated decrypting function
+time.sleep(1)
 prompt = input("Would you like to decrypt a message?\n")
 if prompt == "yes":
     m = input("What would you like to decrypt?\n")
