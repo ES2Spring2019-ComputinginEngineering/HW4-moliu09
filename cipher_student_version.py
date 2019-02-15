@@ -36,33 +36,42 @@
 import math
 import time
 message = input("What is your message?\n")
-shift = int(input("How much do you want to shift the message?\n"))
+shift = input("How much do you want to shift the message?\n")
 
 #encrypting function
 def encrypt(message, shift):
     string = ""
-    for i in message:
-        t = ord(i)
-        if t >= 65 and t <= 90:
-            t = t + 32
-        if t >= 97 and t <= 122:
-            t = t + shift
+    if str.isdigit(shift) == True:
+        shift = int(shift)
+        for i in message:
+            t = ord(i)
+            if t >= 65 and t <= 90:
+                t = t + 32
+            if t >= 97 and t <= 122:
+                t = t + shift
             if t > 122:
                 t = 96 + (t - 122)
-        string = string + chr(t)
+            string = string + chr(t)
+    else:
+        print("Error! Please type in an integer.")
     return string
-print("your message: " + encrypt(message, shift))
+print(encrypt(message, shift))
 
 
 #automated decrypting function
 time.sleep(1)
+def decrypt(code, amount):
+    while amount < 26:
+        number = str(amount)
+        print("Amount shifted = " + number + ": " + encrypt(code, str(amount)))
+        amount = amount + 1
+
 prompt = input("Would you like to decrypt a message?\n")
-m = input("What would you like to decrypt?\n")
-s = 1
-def decrypt(m, s):
-    while s < 26:
-        number = str(s)
-        print("amount shifted = " + number + ": " + encrypt(m, s))
-        s = s + 1
+
 if prompt == "yes":
-    print(decrypt(m, s))
+    code = input("What would you like to decrypt?\n")
+    amount = 1
+    print("Original message: " + code)
+    print(decrypt(code, amount))
+else:
+    print("Goodbye!")
