@@ -5,7 +5,7 @@
 # FILL THESE COMMENTS IN
 #*****************************************
 # YOUR NAME: Mo Liu
-# NUMBER OF HOURS TO COMPLETE:
+# NUMBER OF HOURS TO COMPLETE: 2
 # YOUR COLLABORATION STATEMENT(s): I worked on this assignment with Nicolas Ragusa and Alyssa Attonito.
 #
 #
